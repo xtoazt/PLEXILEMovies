@@ -1,0 +1,23 @@
+{ 
+
+  "name": "PLEXILE Movies", 
+
+  "short_name": "PM 🎬", 
+
+  "start_url": "/", 
+
+  "display": "standalone", 
+
+  "icons": [
+    { 
+
+    "src": "https://cdn.glitch.global/2c4d9217-a211-40c8-af8e-3328b0dc7b43/logo(512x512)?v=1735253494257", 
+
+    "sizes": "512x512", 
+
+    "type": "image/png" 
+
+  }
+] 
+
+}
