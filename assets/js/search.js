@@ -29,7 +29,7 @@ function displayMovies(movies) {
     img.src =
       movie.Poster !== "N/A"
         ? movie.Poster
-        : "https://cdn.glitch.global/2c4d9217-a211-40c8-af8e-3328b0dc7b43/Screenshot%202024-12-24%20011334.png?v=1735024422531";
+        : "/assets/images/imagenotfound.png";
     img.alt = movie.Title;
 
     const text = document.createElement("div");
