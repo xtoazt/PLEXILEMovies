@@ -16,6 +16,7 @@
     <meta property="og:title" content="PLEXILE Movies"/>
     <meta property="og:description" content="Explore the Thousands of Movies/Shows!"/>
     <meta property="og:image" content="/assets/images/ogimage.png"/>
+    <meta name="keywords" content="watch movies, movies online, watch TV, TV online, TV shows online, watch TV shows, stream movies, stream tv, instant streaming, watch online, movies, watch movies United States, watch TV online, no download, full length movies watch online, movies online, movies, watch movies online, watch movies, watch movies online free, watch movies for free, watch streaming media, watch tv online, watch movies online, watch movies online free, watch movies for free, watch streaming media, watch tv online">
     <meta property="og:image:alt" content="PLEXILE Movies"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
@@ -28,7 +29,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/main.css"/>
-    <link rel="stylesheet" href="/assets/css/search.css"/>
+    <link rel="stylesheet" href="/assets/css/index.css"/>
     <link rel="stylesheet" href="/assets/css/navbar.css"/>
     
   </head>
@@ -47,43 +48,39 @@
             <i class="bx bx-cog"></i>
             <span>Settings</span>
           </a>
-          <a href="/about.html" class="dropdown-item">
-            <i class="bx bx-info-circle"></i>
-            <span>About Us</span>
+          <a href="/search.html" class="dropdown-item">
+            <i class='bx bx-search'></i>
+            <span>Search</span>
           </a>
         </div>
       </div>
     </div>
 
     <br/><br/>
-    <div class="content"></div>
-  </body>
+     <div class="content"></div>
+   </body>
 
   <div class="diagonal-glow"></div>
   <div class="particles" id="particles"></div>
 
-  <h3 id="headline" onclick="toggleText()">
-    <span id="typing-text"></span>
-  </h3>
+  <br><br>
+  <div class="container">
+    <div class="text">
+      <h2>Watching Movies & Shows the Better Way.</h2>
+        <p class="description">
+            PLEXILE Movies is not liable for any actions taken while using this service. 
+            The platform does not host movies or shows directly. For any DMCA-related 
+            concerns, please contact the original content provider.
+        </p>
+        <button class="watch-now-button" onclick="window.location.href='/search.html';">Watch Now!</button>
+      </div>
+    <div class="image">
+        <img src="/assets/images/movies.png" alt="MOVIESSSSSS">
+    </div>
+</div>
 
   <body>
-    <div id="search-container">
-      <div id="search-bar">
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search for Movies..." readonly />
-        <div class="hover-glow"></div>
-      </div>
-    </div>
-
-    <div id="overlay">
-      <div id="overlay-search-bar">
-        <i class="bx bx-search"></i>
-        <input type="text" id="overlay-search-input" class="overlay-search-bar" placeholder="Search for Movies..."/>
-      </div>
-
-      <div class="boxes-container" id="boxesContainer"></div>
-    </div>
-
+    
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/search.js" defer></script>
     <script src="/assets/js/overlay.js" defer></script>
