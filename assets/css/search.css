@@ -156,7 +156,7 @@
 }
 
 .box:hover::before {
-  background-image: linear-gradient(to top, rgba(41, 30, 30, 0.9), rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to top, #5a2424, rgba(0, 0, 0, 0) 100%);
 }
 
 .box .text {

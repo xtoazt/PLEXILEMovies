@@ -31,7 +31,7 @@ async function getIP() {
     ipText = data.ip;
   } catch (error) {
     console.error("Failed to fetch IP:", error);
-    ipText = "Failed to get IP";
+    ipText = "Failed to get IP ):<";
   }
 }
 

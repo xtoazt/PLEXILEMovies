@@ -23,7 +23,7 @@ function displayMovies(movies) {
 
   maxMovies.forEach((movie, index) => {
     const box = document.createElement("div");
-    box.classList.add("box");
+    box.classList.add("box");                                                                                                                                                                                                                                                         
 
     const img = document.createElement("img");
     img.src =
