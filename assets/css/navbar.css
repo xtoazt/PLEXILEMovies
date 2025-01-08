@@ -153,7 +153,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #402626 70%, rgba(64, 38, 38, 0) 130%);
+  background-color: #3D2626;
   color: #d9cccc;
   font-size: 14px;
   text-decoration: none;
@@ -168,7 +168,7 @@ body {
 }
 
 .dropdown-item:hover {
-  background-color: rgba(201, 49, 49, 0.4);
+  background-color: #502929; 
 }
 
 .dropdown-item i {
