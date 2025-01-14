@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="/assets/images/banner.png" alt="PLEXILE Movies" style="border-radius: 50%; width: 860px;height: auto;">
+   <img src="/assets/images/banner.png" alt="PLEXILE Movies" style="border-radius: 50%; width: 400px;height: auto;">
 </p>
 <p align="center">
   <a href="https://github.com/willoo0/PLEXILEMovies/graphs/contributors">
