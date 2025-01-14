@@ -10,7 +10,7 @@ body {
 }
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 4%;
   width: 45%;
   height: 60px;
@@ -153,14 +153,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #3D2626;
+  background-color: #302323;
   color: #d9cccc;
   font-size: 14px;
   text-decoration: none;
   padding: 9px 14px;
   border-radius: 7px;
   margin-bottom: 8px;
-  box-shadow: 0 1px 12px #1B1313;
+  box-shadow: 0 1px 10px #161010;
   position: relative;
   overflow: hidden; 
   left: 13px;
