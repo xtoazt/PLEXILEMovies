@@ -1,13 +1,5 @@
 <p align="center">
-   <img src="/assets/images/banner.png" alt="PLEXILE Movies" style="border-radius: 50%; width: 400px;height: auto;">
-</p>
-<p align="center">
-  <a href="https://github.com/willoo0/PLEXILEMovies/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/willoo0/v6" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/willoo0/v6" alt="commits" />
-  </a>  
+   <img src="/assets/images/banner.png" alt="PLEXILE Movies" style="border-radius: 50%; width: 350px;height: auto;">
 </p>
 
 ---
