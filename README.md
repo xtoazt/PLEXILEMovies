@@ -4,11 +4,13 @@
 </kbd>
 </p>
 
+<p align="center">Explore the Thousands of Movies/Shows!</p>
+
 ---
 
 ## Setup
 
-Deploy PLEXILE ARCADE with your preferred platform:
+Deploy PLEXILE Movies with your preferred platform:
 
 ```
 git clone https://github.com/PLEXILENetwork/PLEXILEMovies
