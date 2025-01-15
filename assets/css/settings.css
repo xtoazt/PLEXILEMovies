@@ -1,10 +1,10 @@
 .settings-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 27px;
     padding: 60px 20px 20px 20px;
     justify-content: center;
-  }
+}
   
   .settings-box {
     background-color: #332222;

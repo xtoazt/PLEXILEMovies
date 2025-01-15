@@ -3,13 +3,13 @@
   top: 4%;
   width: 45%;
   height: 60px;
-  background-color: #2e2424;
-  border-radius: 10px;
+  background-color: #2e2424;  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
   padding: 0 12px;
+
 }
 
 .navbar .logo {
