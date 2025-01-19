@@ -69,6 +69,60 @@
 
   <div class="settings-container">
     <div class="settings-box">
+      <h3>Tab Cloak</h3>
+      <p>Quickly disguise your tab to make it seem educational.</p>
+      
+      <div class="tab-cloak-container">
+        <div class="tab-cloak-box" data-favicon="/assets/images/settings/schoology.png" data-title="Schoology">
+          <img src="/assets/images/settings/schoology.png" alt="Schoology">
+        </div>
+        <div class="tab-cloak-box" data-favicon="/assets/images/settings/googledrive.png" data-title="Google Drive">
+          <img src="/assets/images/settings/googledrive.png" alt="Google Drive">
+        </div>
+        <div class="tab-cloak-box" data-favicon="/assets/images/settings/googleslides.png" data-title="Google Slides">
+          <img src="/assets/images/settings/googleslides.png" alt="Google Slides">
+        </div>
+        <div class="tab-cloak-box" data-favicon="/assets/images/settings/googleclassroom.png" data-title="Google Classroom">
+          <img src="/assets/images/settings/googleclassroom.png" alt="Google Classroom">
+        </div>
+        <div class="tab-cloak-box" data-favicon="/assets/images/settings/reset-icon.png" data-title="Reset">
+          <img src="/assets/images/settings/reset-icon.png" alt="Reset">
+        </div>
+      </div>        
+
+      <i
+        class="bx bx-help-circle info-icon"
+        onclick="showOverlay(event, 'Tab Cloak', 'Quickly disguise your tab to make it seem educational.')"
+      ></i>
+    </div>
+  
+    <div class="settings-box">
+      <h3>Panic Key</h3>
+      <p>Redirects you to a educational website whenever a certain key is pressed.</p>
+
+      <div class="container">
+      <input type="text" id="search-bar" placeholder="">
+        <div id="panic-key-box" class="mini-box" onclick="enablePanicKeyEditing()">
+            <span id="panic-key">-</span>
+        </div>
+      </div>
+
+      <i
+        class="bx bx-help-circle info-icon"
+        onclick="showOverlay(event, 'Panic Key', 'Redirects you to a educational website whenever a certain key is pressed.')"
+      ></i>
+    </div>
+
+    <div class="settings-box">
+      <h3>API (OMDB/TMDB)</h3>
+      <p>Changes the PLEXILE Movies API incase the Default isnt working.</p>
+      <i
+        class="bx bx-help-circle info-icon"
+        onclick="showOverlay(event, 'API (OMDB/TMDB)', 'Changes the PLEXILE Movies API incase the Default isnt working.')"
+      ></i>
+    </div>
+  
+    <div class="settings-box">
       <h3>About:Blank</h3>
       <p>Hides your history & Makes the Link Less-Blockable.</p>
       <i
@@ -128,61 +182,6 @@
       ></i>
     </div>
 
-    <div class="settings-box">
-      <h3>Tab Cloak</h3>
-      <p>Quickly disguise your tab to make it seem educational.</p>
-      
-      <div class="tab-cloak-container">
-        <div class="tab-cloak-box" data-favicon="/assets/images/settings/schoology.png" data-title="Schoology">
-          <img src="/assets/images/settings/schoology.png" alt="Schoology">
-        </div>
-        <div class="tab-cloak-box" data-favicon="/assets/images/settings/googledrive.png" data-title="Google Drive">
-          <img src="/assets/images/settings/googledrive.png" alt="Google Drive">
-        </div>
-        <div class="tab-cloak-box" data-favicon="/assets/images/settings/googleslides.png" data-title="Google Slides">
-          <img src="/assets/images/settings/googleslides.png" alt="Google Slides">
-        </div>
-        <div class="tab-cloak-box" data-favicon="/assets/images/settings/googleclassroom.png" data-title="Google Classroom">
-          <img src="/assets/images/settings/googleclassroom.png" alt="Google Classroom">
-        </div>
-        <div class="tab-cloak-box" data-favicon="/assets/images/settings/reset-icon.png" data-title="Reset">
-          <img src="/assets/images/settings/reset-icon.png" alt="Reset">
-        </div>
-      </div>        
-
-      <i
-        class="bx bx-help-circle info-icon"
-        onclick="showOverlay(event, 'Tab Cloak', 'Quickly disguise your tab to make it seem educational.')"
-      ></i>
-    </div>
-  
-    <div class="settings-box">
-      <h3>Panic Key</h3>
-      <p>Redirects you to a educational website whenever a certain key is pressed.</p>
-
-      <div class="container">
-      <input type="text" id="search-bar" placeholder="">
-        <div id="panic-key-box" class="mini-box" onclick="enablePanicKeyEditing()">
-            <span id="panic-key">-</span>
-        </div>
-      </div>
-
-      <i
-        class="bx bx-help-circle info-icon"
-        onclick="showOverlay(event, 'Panic Key', 'Redirects you to a educational website whenever a certain key is pressed.')"
-      ></i>
-    </div>
-
-    <div class="settings-box">
-      <h3>API (OMDB/TMDB)</h3>
-      <p>Changes the PLEXILE Movies API incase the Default isnt working.</p>
-      <i
-        class="bx bx-help-circle info-icon"
-        onclick="showOverlay(event, 'API (OMDB/TMDB)', 'Changes the PLEXILE Movies API incase the Default isnt working.')"
-      ></i>
-    </div>
-  </div>
-
   <div class="overlay" id="overlay" onclick="hideOverlay(event)">
     <div class="overlay-content" id="overlay-content">
       <h3 id="overlay-title"></h3>
@@ -190,14 +189,21 @@
     </div>
   </div>  
 
+    <!-- Scripts -->
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/loader.js" defer></script>
-    <script src="/assets/js/api.js" defer></script>
     <script src="/assets/js/search.js" defer></script>
     <script src="/assets/js/overlay.js" defer></script>
     <script src="/assets/js/highlight.js" defer></script>
     <script src="/assets/js/mobile.js" defer></script>
     <script src="/assets/js/settings.js" defer></script>
     <script src="/assets/js/navbar.js" defer></script>
+
+    <!-- Settings Scripts -->
+    <script src="/assets/js/settings/ads.js" defer></script>
+    <script src="/assets/js/settings/api.js" defer></script>
+    <script src="/assets/js/settings/panickey.js" defer></script>
+    <script src="/assets/js/settings/tabcloak.js" defer></script>
+    <script src="/assets/js/settings/videosources.js" defer></script>
 </body>
 </html>
