@@ -8,6 +8,7 @@
   
   .settings-box {
     background-color: #332222;
+    border: 1px solid #412626;
     backdrop-filter: blur(12px);
     border-radius: 13px;
     padding: 25px;
@@ -18,7 +19,9 @@
     width: 320px;
     height: 160px;
     display: flex;
-    align-items: center;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   
   .settings-box:hover {
@@ -27,14 +30,17 @@
   
   .settings-box h3 {
     margin: 0;
+    white-space: nowrap;
     font-size: 1.4em;
     text-align: left;
-    margin-bottom: 130px;
+    margin-top: 2px;
   }
         
     .settings-box p {
-    font-size: 1em;
+    margin-top: 8px;
+    font-size: 0.90em;
     text-align: left;
+    color: #cccccc;
   }
   
   .settings-box .info-icon {
@@ -82,12 +88,19 @@
     padding: 20px 30px;
     border-radius: 11px;
     color: #fff;
+    border: 1px solid #412626;
     text-align: left;
     transform: scale(0.9);
     transition: transform 0.3s ease;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
   }
   
+  .overlay-content p {
+    font-size: 0.95em;
+    text-align: left;
+    color: #cccccc;
+  }
+
   .overlay.active {
     visibility: visible;
     opacity: 1;
@@ -96,3 +109,141 @@
   .overlay.active .overlay-content {
     transform: scale(1);
   }
+
+  .settings-button {
+    background-color: #C93131;
+    border: none;
+    box-shadow: 0 8px 20px rgba(201, 49, 49, 0.5);
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 0px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.92em;
+    transition: all 0.5s ease;
+    text-align: left;
+}
+    
+  .settings-button:hover {
+    box-shadow: 0 12px 25px rgba(201, 49, 49, 0.6); 
+    transform: translateY(-1px); 
+    }
+    
+  .settings-button i {
+    margin-right: 5px;
+    }
+
+    .ads-button {
+      background-color: #C93131;
+      border: none;
+      box-shadow: 0 8px 20px rgba(201, 49, 49, 0.5);
+      color: #ffffff;
+      padding: 10px 20px;
+      margin-top: 0px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.92em;
+      transition: all 0.5s ease;
+      text-align: left;
+  }
+      
+      .ads-button:hover {
+      box-shadow: 0 12px 25px rgba(201, 49, 49, 0.6); 
+      transform: translateY(-1px); 
+      }
+      
+      .ads-button i {
+      margin-right: 5px;
+      }
+
+.tab-cloak-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  margin-top: 20px;
+}
+
+.tab-cloak-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -15px;
+  width: 50px;
+  height: 52px;
+  border-radius: 10px;
+  background-color: #4B2F2F;
+  border: 1px solid #613434;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tab-cloak-box::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  background: rgba(201, 49, 49, 0.4);
+  filter: blur(15px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.tab-cloak-box img {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+}
+
+.tab-cloak-box:hover {
+  box-shadow: 0 5px 12px #4B2F2F;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#search-bar {
+  width: 240px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #4B2F2F;
+  border: 1px solid #613434;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  outline: none;
+  transition: all 0.2s;
+}
+
+#search-bar:hover {
+  box-shadow: 0 5px 12px #4B2F2F;
+}
+
+#panic-key-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 38px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #4B2F2F;
+  border: 1px solid #613434;  
+  border-radius: 5px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#panic-key-box:hover {
+  box-shadow: 0 5px 12px #4B2F2F;
+}
