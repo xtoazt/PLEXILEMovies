@@ -2,7 +2,11 @@ const searchBar = document.getElementById("overlay-search-input");
 const searchContainer = document.getElementById("overlay-search-bar");
 const boxesContainer = document.getElementById("boxesContainer");
 
-const apiKey = "966c4f4f";
+const defaultOmdbKey = "966c4f4f"; 
+const defaultTmdbKey = "0b1a381779730d5ba21cec8bd86124ea";
+
+let apiKey = localStorage.getItem("currentApiKey") || defaultOmdbKey; 
+let currentServer = localStorage.getItem("currentApiServer") || "OMDB"; 
 
 const errorMessage = document.createElement("div");
 errorMessage.id = "api-error-message";
@@ -15,20 +19,32 @@ searchContainer.parentNode.insertBefore(errorMessage, searchContainer.nextSiblin
 
 async function fetchMovies(query) {
   try {
-    const response = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`);
+    let url;
+
+    if (currentServer === "OMDB") {
+      url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
+    } else if (currentServer === "TMDB") {
+      url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`;
+    } else {
+      throw new Error("Unknown server.");
+    }
+
+    const response = await fetch(url);
 
     if (!response.ok) {
       throw new Error("Network error.");
     }
 
     const data = await response.json();
+    
+    console.log(data);
 
-    if (data.Response === "False" && data.Error === "Invalid API key!") {
+    if (currentServer === "OMDB" && data.Response === "False" && data.Error === "Invalid API key!") {
       throw new Error("Invalid API key.");
     }
 
     hideError();
-    return data.Search || [];
+    return currentServer === "OMDB" ? data.Search || [] : data.results || []; 
   } catch (error) {
     showError("Error: API Key not Functioning. Please change your API in Settings!");
     return [];
@@ -58,12 +74,18 @@ function displayMovies(movies) {
     box.classList.add("box");
 
     const img = document.createElement("img");
-    img.src = movie.Poster !== "N/A" ? movie.Poster : "/assets/images/imagenotfound.png";
-    img.alt = movie.Title;
+    
+    const posterUrl = currentServer === "TMDB" ? 
+    `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 
+     movie.Poster !== "N/A" && movie.Poster ? movie.Poster : "/assets/images/imagenotfound.png";
+
+    img.src = posterUrl;
+    img.alt = movie.title || movie.name;  
 
     const text = document.createElement("div");
     text.classList.add("text");
-    text.innerText = movie.Title;
+
+    text.innerText = currentServer === "TMDB" ? movie.title || movie.name || "Not Found" : movie.Title || "Not Found";
 
     box.appendChild(img);
     box.appendChild(text);

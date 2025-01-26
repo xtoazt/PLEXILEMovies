@@ -52,10 +52,9 @@ function toggleText() {
   isIP = !isIP;
 }
 
-
-  window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
   createParticles();
-};
+});
 
 function createParticles() {
   const particlesContainer = document.getElementById("particles");
