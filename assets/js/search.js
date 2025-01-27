@@ -17,6 +17,8 @@ errorMessage.style.transition = "opacity 0.5s ease";
 errorMessage.style.textAlign = "center";
 searchContainer.parentNode.insertBefore(errorMessage, searchContainer.nextSibling);
 
+const errorBox = document.getElementById("error-box");
+
 async function fetchMovies(query) {
   try {
     let url;
@@ -36,7 +38,7 @@ async function fetchMovies(query) {
     }
 
     const data = await response.json();
-    
+
     console.log(data);
 
     if (currentServer === "OMDB" && data.Response === "False" && data.Error === "Invalid API key!") {
@@ -44,16 +46,27 @@ async function fetchMovies(query) {
     }
 
     hideError();
+    hideErrorBox();  
     return currentServer === "OMDB" ? data.Search || [] : data.results || []; 
   } catch (error) {
-    showError("Error: API Key not Functioning. Please change your API in Settings!");
+    
+    showErrorBox();
     return [];
   }
 }
 
-function showError(message) {
-  errorMessage.textContent = message;
-  errorMessage.style.opacity = "1";
+function showErrorBox() {
+  
+  searchContainer.classList.add("hidden");
+
+  errorBox.classList.add("show");
+}
+
+function hideErrorBox() {
+  
+  searchContainer.classList.remove("hidden");
+
+  errorBox.classList.remove("show");
 }
 
 function hideError() {
@@ -85,7 +98,7 @@ function displayMovies(movies) {
     const text = document.createElement("div");
     text.classList.add("text");
 
-    text.innerText = currentServer === "TMDB" ? movie.title || movie.name || "Not Found" : movie.Title || "Not Found";
+    text.innerText = currentServer === "TMDB" ? movie.title || movie.name || "API Error 404" : movie.Title || "API Error 404";
 
     box.appendChild(img);
     box.appendChild(text);

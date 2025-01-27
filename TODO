@@ -2,10 +2,12 @@
 - Add PLEXILE Movies Phones UI ✅
 - 404 Page ✅
 - Add README.md ✅
+- Add a Error Message for API Keys ✅
+- Create/Add Settings Page ✅
 
-- Create/Add Settings Page 
-- Add a Error Message for API Keys
 - Add Reviews and Movies to Home Page
+- Add "Settings Applied" Msg in Settings 
+
 - Make Movies work with GoDrivePlayer & VidSRC API 
 - Create Movies Page
 - Fix Bugs 
