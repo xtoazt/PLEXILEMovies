@@ -13,7 +13,7 @@
 Deploy PLEXILE Movies with your preferred platform:
 
 > [!IMPORTANT]  
-> PLEXILE Movies may not work on every hoster. Render, Vercel, Glitch or Cloudflare are recommended!
+> PLEXILE Movies may not work on every hoster. Render, Vercel, or Glitch are recommended!
 
 ```
 git clone https://github.com/PLEXILENetwork/PLEXILEMovies.git
