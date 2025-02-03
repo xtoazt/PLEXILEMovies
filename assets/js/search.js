@@ -82,23 +82,27 @@ function displayMovies(movies) {
 
   const maxMovies = movies.slice(0, 10);
 
-  maxMovies.forEach((movie, index) => {
+  maxMovies.forEach((movie) => {
     const box = document.createElement("div");
     box.classList.add("box");
 
+    box.dataset.id = movie.imdbID || movie.id;
+    box.dataset.title = currentServer === "TMDB" ? movie.title || movie.name || "Watch" : movie.Title || "API Error 404";
+    box.dataset.mediaType = movie.media_type || (movie.name ? "tv" : "movie");
+
     const img = document.createElement("img");
-    
-    const posterUrl = currentServer === "TMDB" ? 
-    `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 
-     movie.Poster !== "N/A" && movie.Poster ? movie.Poster : "/assets/images/imagenotfound.png";
+    const posterUrl = currentServer === "TMDB"
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
+      : movie.Poster !== "N/A" && movie.Poster
+      ? movie.Poster
+      : "/assets/images/imagenotfound.png";
 
     img.src = posterUrl;
-    img.alt = movie.title || movie.name;  
+    img.alt = box.dataset.title;
 
     const text = document.createElement("div");
     text.classList.add("text");
-
-    text.innerText = currentServer === "TMDB" ? movie.title || movie.name || "API Error 404" : movie.Title || "API Error 404";
+    text.innerText = box.dataset.title;
 
     box.appendChild(img);
     box.appendChild(text);
@@ -116,6 +120,34 @@ function displayMovies(movies) {
     });
   }, 100);
 }
+
+boxesContainer.addEventListener("click", (event) => {
+  const box = event.target.closest(".box");
+  if (!box) return;
+
+  const videoSource = localStorage.getItem("videoSource") || "vidsrc.in";
+  const title = box.dataset.title;
+  const itemId = box.dataset.id;
+  const mediaType = box.dataset.mediaType;
+
+  let videoUrl = `https://${videoSource}/embed/${mediaType}/${itemId}`;
+
+  localStorage.setItem("videoTitle", title);
+  localStorage.setItem("videoUrl", videoUrl);
+  window.location.href = "/watch.html";
+});
+
+  setTimeout(() => {
+    boxesContainer.style.opacity = "1";
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach((box, index) => {
+      setTimeout(() => {
+        box.style.opacity = "1";
+        box.style.transform = "translateY(0)";
+      }, index * 80);
+    });
+  }, 100);
+
 
 searchBar.addEventListener("input", async () => {
   const query = searchBar.value.trim();
