@@ -5,8 +5,8 @@ window.onload = function() {
   if (videoUrl) {
     const iframe = document.createElement("iframe");
     iframe.src = videoUrl;
-    iframe.width = "900px";
-    iframe.height = "500px"; 
+    iframe.width = "1025px";
+    iframe.height = "515px"; 
     iframe.frameborder = "0";
 
     iframe.allowFullscreen = true;
