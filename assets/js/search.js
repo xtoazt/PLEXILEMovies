@@ -26,7 +26,7 @@ async function fetchMovies(query) {
     if (currentServer === "OMDB") {
       url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
     } else if (currentServer === "TMDB") {
-      url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`;
+      url = `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${apiKey}`;
     } else {
       throw new Error("Unknown server.");
     }
@@ -121,27 +121,43 @@ function displayMovies(movies) {
   }, 100);
 }
 
-boxesContainer.addEventListener("click", (event) => {
+boxesContainer.addEventListener("click", async (event) => {
   const box = event.target.closest(".box");
   if (!box) return;
 
   const videoSource = localStorage.getItem("videoSource") || "vidsrc.in";
   const title = box.dataset.title;
   const itemId = box.dataset.id;
-  const mediaType = box.dataset.mediaType;
+  let mediaType = box.dataset.mediaType;
 
   let videoUrl = `https://${videoSource}/embed/${mediaType}/${itemId}?autonext=1`;
 
+  const is404 = await check404(videoUrl);
+  
+  if (is404 && mediaType === "movie") {
+    console.log("404 detected, switching to TV...");
+    mediaType = "tv";
+    videoUrl = `https://${videoSource}/embed/${mediaType}/${itemId}?autonext=1`;
+  }
+
   let watchedMovies = JSON.parse(localStorage.getItem("watchedMovies")) || [];
-
   watchedMovies.push({ title, videoUrl });
-
   localStorage.setItem("watchedMovies", JSON.stringify(watchedMovies));
 
-  const encodedTitle = encodeURIComponent(title).replace(/%20/g, "+");
-  window.location.href = `/watch.html#${encodedTitle}`;
+  window.location.href = `/watch.html#${encodeURIComponent(title).replace(/%20/g, "+")}`;
 });
 
+async function check404(url) {
+  try {
+    const response = await fetch(url);
+    const text = await response.text();
+    
+    return text.includes("This media is unavailable at the moment.");
+  } catch (error) {
+    console.error("Error checking 404:", error);
+    return true; 
+  }
+}
 
   setTimeout(() => {
     boxesContainer.style.opacity = "1";
