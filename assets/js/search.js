@@ -130,12 +130,18 @@ boxesContainer.addEventListener("click", (event) => {
   const itemId = box.dataset.id;
   const mediaType = box.dataset.mediaType;
 
-  let videoUrl = `https://${videoSource}/embed/${mediaType}/${itemId}`;
+  let videoUrl = `https://${videoSource}/embed/${mediaType}/${itemId}?autonext=1`;
 
-  localStorage.setItem("videoTitle", title);
-  localStorage.setItem("videoUrl", videoUrl);
-  window.location.href = "/watch.html";
+  let watchedMovies = JSON.parse(localStorage.getItem("watchedMovies")) || [];
+
+  watchedMovies.push({ title, videoUrl });
+
+  localStorage.setItem("watchedMovies", JSON.stringify(watchedMovies));
+
+  const encodedTitle = encodeURIComponent(title).replace(/%20/g, "+");
+  window.location.href = `/watch.html#${encodedTitle}`;
 });
+
 
   setTimeout(() => {
     boxesContainer.style.opacity = "1";
