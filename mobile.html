@@ -49,6 +49,18 @@
 </h3>
 
 <body>
+  <br /><br />
+  <div class="content"></div>
+</body>
+
+<div class="diagonal-glow"></div>
+<div class="particles" id="particles"></div>
+
+<h3 id="headline" onclick="toggleText()">
+  <span id="typing-text"></span>
+</h3>
+
+<body>
   <div id="search-container">
     <div id="search-bar">
       <i class="bx bx-search"></i>
@@ -62,12 +74,18 @@
       <i class="bx bx-search"></i>
       <input type="text" id="overlay-search-input" class="overlay-search-bar" placeholder="Search for Movies/Shows..." />
     </div>
-
+  
     <div class="boxes-container" id="boxesContainer"></div>
-  </div>
+    
+
+    <div id="error-box" class="error-box">
+      
+      <i class='bx bx-error error-icon'></i>   
+      <p>Error: API Key isn't working correctly, Please change it in <a href="/settings.html" id="error-link"><b>/settings.html</b></a></p>
+    </div>
+  </div>  
 
     <!-- Scripts -->
-    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/loader.js" defer></script>
     <script src="/assets/js/search.js" defer></script>
