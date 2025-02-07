@@ -28,3 +28,17 @@ function toggleScrollDirection() {
   }
 
   setInterval(toggleScrollDirection, 30000);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    function shuffleMovies(trackId) {
+        let track = document.getElementById(trackId);
+        let items = Array.from(track.children);
+        
+        items.sort(() => Math.random() - 0.5);
+
+        items.forEach(item => track.appendChild(item));
+    }
+
+    shuffleMovies("track1");
+    shuffleMovies("track2");
+});

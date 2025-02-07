@@ -69,6 +69,15 @@ body {
     flex-shrink: 0;
     display: block;
     z-index: -1;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+
   }
 
   .movies-track {
@@ -117,5 +126,5 @@ body {
   .highlight {
     background-color: #C93131;
     padding: 0px 5px;
-    border-radius: 5px; 
+    border-radius: 0px; 
   }

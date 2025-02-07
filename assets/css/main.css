@@ -92,3 +92,13 @@ h3 {
 #headline {
   margin: 0;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5C2C2C;
+  height: 2px;
+}
