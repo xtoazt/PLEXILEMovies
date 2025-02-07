@@ -2,7 +2,6 @@ body {
   margin: 0;
   background-color: #141212;
   overflow-x: hidden;
-  height: 100vh;
   position: relative;
   font-family: Arial, sans-serif;
   display: flex;  

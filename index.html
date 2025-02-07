@@ -165,7 +165,85 @@
   </div>
 </div>
 
+<div class="container2">
+  <div class="text2">
+    <h2>Check out our <span class="highlight">Reviews.</span></h2>
+        <p class="description2">
+          Read real reviews from our users and see how our service has made a difference!
+      </p>
+
+<div class="reviews-container">
+  <div class="reviews">
+      <div class="review">
+          <img src="/assets/images/users/1.png" alt="User">
+          <h3>PLEXILE Network</h3>
+          <p>"plexilemovies.xyz very very very very very very good"</p>
+      </div>
+      <div class="review">
+          <img src="/assets/images/users/2.png" alt="User">
+          <h3>JRDN</h3>
+          <p>"movie-web.app is the #1 top g but we are #2 top g!!!"</p>
+      </div>
+      <div class="review">
+          <img src="/assets/images/users/3.png" alt="User">
+          <h3>frogiee1</h3>
+          <p>"THOSE WHO DRINK EGGNOGTHOSE WHO DRINK EGGNOG."</p>
+      </div>
+        <div class="review">
+          <img src="/assets/images/users/4.png" alt="User">
+          <h3>CAuXTIK𒉭</h3>
+          <p>"very good but like theres already a bunch of sites like that tho/..."</p>
+      </div>
+        <div class="review">
+          <img src="/assets/images/users/5.png" alt="User">
+          <h3>Jobi</h3>
+          <p>"*freaky* movie site 👍 also (imo) the top nav bar is a lil empty"</p>
+      </div>
+        <div class="review">
+          <img src="/assets/images/users/6.png" alt="User">
+          <h3>nobodycares</h3>
+          <p>"you should use lightgo.app/bare/ (very fast, speedy, reliable bare)"</p>
+      </div>
+        <div class="review">
+          <img src="/assets/images/users/7.png" alt="User">
+          <h3>U.S</h3>
+          <p>"We are SO getting DMCA'd with this one 🗣️🗣️🗣️🔥🔥🔥🔥"</p>
+      </div>
+        <div class="review">
+          <img src="/assets/images/users/8.png" alt="User">
+          <h3>Camouflage</h3>
+          <p>"why when I click on typewriter text it gives me my ip???????"</p>
+      </div>
+      <div class="review">
+          <img src="/assets/images/users/9.png" alt="User">
+          <h3>he29k</h3>
+          <p>"Good site but has ads but atleast we can disable them."</p>
+      </div>
+  </div>
+</div>
+<br>
+
   <body>
+
+    <script>
+      let reviews = document.querySelector('.reviews');
+      let direction = 1; 
+      let scrollAmount = 0;
+      let maxScroll = reviews.scrollWidth - document.querySelector('.reviews-container').clientWidth;
+  
+      function scrollReviews() {
+          scrollAmount += direction * 5;
+          if (scrollAmount >= maxScroll || scrollAmount <= 0) {
+              direction *= -1; 
+          }
+          reviews.style.transform = `translateX(${-scrollAmount}px)`;
+      }
+  
+      let interval = setInterval(scrollReviews, 50);
+  
+      document.querySelector('.reviews-container').addEventListener('mouseenter', () => clearInterval(interval));
+      document.querySelector('.reviews-container').addEventListener('mouseleave', () => interval = setInterval(scrollReviews, 50));
+  </script>  
     
     <!-- Scripts -->
     <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
