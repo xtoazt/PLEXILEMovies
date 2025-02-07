@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center">x
 <kbd>
    <img src="/assets/images/banner.png" alt="PLEXILE Movies" style="border-radius: 50%; width: 350px;height: auto;">
 </kbd>
