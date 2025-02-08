@@ -42,3 +42,21 @@ function toggleScrollDirection() {
     shuffleMovies("track1");
     shuffleMovies("track2");
 });
+
+let reviews = document.querySelector('.reviews');
+let direction = 1; 
+let scrollAmount = 0;
+let maxScroll = reviews.scrollWidth - document.querySelector('.reviews-container').clientWidth;
+
+function scrollReviews() {
+    scrollAmount += direction * 5;
+    if (scrollAmount >= maxScroll || scrollAmount <= 0) {
+        direction *= -1; 
+    }
+    reviews.style.transform = `translateX(${-scrollAmount}px)`;
+}
+
+let interval = setInterval(scrollReviews, 50);
+
+document.querySelector('.reviews-container').addEventListener('mouseenter', () => clearInterval(interval));
+document.querySelector('.reviews-container').addEventListener('mouseleave', () => interval = setInterval(scrollReviews, 50));
