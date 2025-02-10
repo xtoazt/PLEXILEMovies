@@ -179,7 +179,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
   padding: 10px;
   gap: 20px;
@@ -188,7 +188,7 @@ body {
 
 .text2 {
     flex: 1;
-    max-width: 1200px;
+    max-width: 1300px;
     text-align: left;
 }
 
