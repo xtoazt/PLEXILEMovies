@@ -203,3 +203,14 @@ body {
     color: #bbb; 
     line-height: 1.6;
 }
+
+.link {
+    text-decoration: underline;
+    color: #C93131;
+    transition: color 0.5s ease;
+    
+}
+
+.link:hover {
+    color: #e63030; 
+}
