@@ -3,31 +3,31 @@ body {
 }
 
 .settings-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 27px;
-    padding: 60px 20px 20px 20px;
-    justify-content: center;
-  }
-  
-  .settings-box {
-    background-color: #332222;
-    border: 1px solid #412626;
-    backdrop-filter: blur(12px);
-    border-radius: 10px;
-    padding: 25px;
-    color: #fff;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    width: 320px;
-    height: 160px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 27px;
+  padding: 60px 20px 20px 20px;
+  justify-content: center;
+}
+
+.settings-box {
+  background-color: #332222;
+  border: 1px solid #412626;
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 25px;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  width: 320px;
+  height: 160px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
   .settings-box:hover {
     transform: translateY(-3px);
   }
