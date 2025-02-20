@@ -102,3 +102,8 @@ h3 {
   background: #5C2C2C;
   height: 2px;
 }
+
+:focus {
+  outline: 2px solid #C93131; 
+  box-shadow: 0 0 25px #C93131;
+}
