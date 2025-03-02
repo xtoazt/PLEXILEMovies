@@ -110,7 +110,6 @@ h3 {
 
 :focus-visible {
   outline: 2px solid #C93131; 
-  box-shadow: 0 0 25px #C93131;
 }
 
 input:focus {
