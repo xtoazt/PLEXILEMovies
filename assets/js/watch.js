@@ -8,7 +8,7 @@ window.onload = function () {
         return;
     }
 
-    document.title = `PLEXILE Movies - ${movie.title}`;
+    document.title = `fire - ${movie.title}`;
 
     const iframe = document.getElementById("videoFrame");
 

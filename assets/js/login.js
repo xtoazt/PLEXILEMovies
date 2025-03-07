@@ -6,7 +6,7 @@ const formContainer = document.getElementById("form-container");
 const pageTitle = document.getElementById("page-title");
 
 if (hash === "#register" || !savedPassword) {
-  document.title = "PLEXILE Movies - Register";
+  document.title = "fire - Register";
   pageTitle.textContent = "Register";
   mainContainer.className = "container register-mode";
   formContainer.innerHTML = `
@@ -30,7 +30,7 @@ if (hash === "#register" || !savedPassword) {
       }
     });
 } else {
-  document.title = "PLEXILE Movies - Login";
+  document.title = "fire - Login";
   pageTitle.textContent = "Login";
   mainContainer.className = "container login-mode";
   formContainer.innerHTML = `
